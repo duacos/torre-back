@@ -1,6 +1,5 @@
 import express from "express";
 import bodyParser from "body-parser";
-import config from "./config";
 import router from "./routes/network";
 import path from "path";
 import cors from "cors";
@@ -13,7 +12,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: config.origin,
+    origin: process.env.ORIGIN,
     optionsSuccessStatus: 200,
     credentials: false,
   })
@@ -24,5 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Main routes
 router(app);
 
-app.listen(config.port || 8080);
-console.log(`Server is running on port ${config.domain}:${config.port}`);
+app.listen(process.env.PORT || 8080);
+console.log(
+  `Server is running on port ${process.env.DOMAIN}:${process.env.PORT}`
+);

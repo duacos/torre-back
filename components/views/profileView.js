@@ -3,12 +3,12 @@ import controller from "../controllers/profileController";
 export const show = () => async (req, res) => {
   const username = req.params.username;
 
-  const lesson = await controller.show(username);
+  const profile = await controller.show(username);
 
   try {
     res.status(200).send({
       error: "",
-      body: lesson,
+      body: profile,
     });
   } catch (error) {
     res.status(500).send({
