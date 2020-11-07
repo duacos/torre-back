@@ -1,4 +1,4 @@
-import axios from "axios";
+const axios = require("axios");
 
 const getOne = async (username) => {
   try {
@@ -9,6 +9,6 @@ const getOne = async (username) => {
   }
 };
 
-export default {
+module.exports = {
   getOne,
 };

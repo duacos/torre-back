@@ -1,6 +1,6 @@
-import controller from "../controllers/profileController";
+const controller = require("../controllers/profileController");
 
-export const show = () => async (req, res) => {
+const show = () => async (req, res) => {
   const username = req.params.username;
 
   const profile = await controller.show(username);
@@ -16,4 +16,7 @@ export const show = () => async (req, res) => {
       body: [],
     });
   }
+};
+module.exports = {
+  show,
 };

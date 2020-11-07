@@ -1,8 +1,8 @@
-import express from "express";
-import bodyParser from "body-parser";
-import router from "./routes/network";
-import path from "path";
-import cors from "cors";
+const express = require("express");
+const bodyParser = require("body-parser");
+const router = require("./routes/network");
+const path = require("path");
+const cors = require("cors");
 
 require("dotenv").config({
   path: path.join(__dirname, ".env"),
